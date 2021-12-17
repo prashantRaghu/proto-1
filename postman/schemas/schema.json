@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package hello;
+
+service HelloService {
+  rpc SayHello(HelloRequest) returns (HelloResponse);
+  rpc LotsOfRepliesFortesting(HelloRequest) returns (stream HelloResponse);
+}
+
+message HelloRequest {
+  optional string greeting = 1;
+}
+
+message HelloResponse {
+  required string reply = 1;
+}
